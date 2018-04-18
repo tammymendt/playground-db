@@ -1,0 +1,11 @@
+version: '2.1'
+services:
+    postgres:
+        image: postgres:9.6
+        environment:
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=postgres
+            - POSTGRES_DB=postgres
+        volumes:
+            - ./data:/usr/local/db_data
+            - ./script/init_db.sh:/docker-entrypoint-initdb.d/init_db.sh
