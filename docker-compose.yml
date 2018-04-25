@@ -9,3 +9,5 @@ services:
         volumes:
             - ./data:/usr/local/db_data
             - ./script/init_db.sh:/docker-entrypoint-initdb.d/init_db.sh
+        ports:
+            - 5432:5432
